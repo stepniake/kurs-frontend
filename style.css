@@ -1,7 +1,13 @@
+:root {
+  --color_bg: #26335d; /* wywołanie np: color: var(--color_bg); */
+  --color_violet: #8d5cf6;
+}
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #26335d;
+  background-color: var(--color_bg);
 }
 
 img {
@@ -23,31 +29,30 @@ img {
 }
 
 .lewa {
-
   padding: 20px;
   max-width: 573px;
 }
 
 .prawa {
-
   max-width: 704px;
 }
 
-
-
-/* Responsywność - na telefonie kolumny pod sobą */
 @media (max-width: 768px) {
   .glowna {
+    flex-direction: column;
+  }
+
+  .menu_gap {
+    width: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .liczby {
     flex-direction: column;
     /* układa divy jeden pod drugim */
   }
 
-  @media (max-width: 500px) {
-    .liczby {
-      flex-direction: column;
-      /* układa divy jeden pod drugim */
-    }
-  }
 }
 
 .menu {
@@ -94,7 +99,7 @@ img {
 }
 
 .menu_button {
-  background-color: #8d5cf6FF;
+  background-color: var(--color_violet);
   margin: 10px;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -106,15 +111,56 @@ img {
   padding-left: 25px;
   padding-right: 25px;
   border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu_button:hover {
+  background-color: #2ecc71;
+
+  transform: scale(1.1);
 }
 
 
-.w_100 {
-  margin-left: 100px;
+.menu_button_2 {
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 1px solid var(--color_violet);
+}
+
+.menu_button_2:hover {
+  background-color: #2ecc71;
+  transform: scale(1.1);
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.menu_gap {
+  width: 100px;
 }
 
 .welcome {
-  color: #8d5cf6FF;
+  color: var(--color_violet);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -155,7 +201,7 @@ img {
   line-height: 1.57;
   letter-spacing: 0.2;
   padding: 20px 30px 20px 30px;
-  background-color: #8d5cf6FF;
+  background-color: var(--color_violet);
   max-width: fit-content;
   max-height: fit-content;
   border-radius: 10px;
@@ -171,7 +217,7 @@ img {
   line-height: 1.57;
   letter-spacing: 0.2;
   padding: 20px 30px 20px 30px;
-  border: 1px solid #8d5cf6FF;
+  border: 1px solid var(--color_violet);
   max-width: fit-content;
   max-height: fit-content;
   border-radius: 10px;
@@ -193,7 +239,7 @@ img {
 }
 
 .h1_l {
-  color: #8d5cf6FF;
+  color: var(--color_violet);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -294,26 +340,28 @@ img {
   width: 238px;
   height: 300px;
   margin-bottom: 0xp;
+  box-sizing: border-box;
+  /*height dotyczy całości - nie rozciagnie go padding na wew*/
 }
 
 .kurs_kafel_up_bg1 {
-background-image: url('img/kurs1.jpg');
-background-size: auto 100%;
+  background-image: url('img/kurs1.jpg');
+  background-size: auto 100%;
 }
 
 .kurs_kafel_up_bg2 {
-background-image: url('img/kurs2.jpg');
-background-size: auto 100%;
+  background-image: url('img/kurs2.jpg');
+  background-size: auto 100%;
 }
 
 .kurs_kafel_up_bg3 {
-background-image: url('img/kurs3.jpg');
-background-size: auto 100%;
+  background-image: url('img/kurs3.jpg');
+  background-size: auto 100%;
 }
 
 .kurs_kafel_up_bg4 {
-background-image: url('img/kurs4.jpg');
-background-size: auto 100%;
+  background-image: url('img/kurs4.jpg');
+  background-size: auto 100%;
 }
 
 
@@ -339,7 +387,7 @@ background-size: auto 100%;
 }
 
 .butt_learn {
-  color: #8d5cf6FF;
+  color: var(--color_violet);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -347,10 +395,12 @@ background-size: auto 100%;
   line-height: 1.57;
   letter-spacing: 0.2;
   padding: 10px 20px 10px 20px;
-  border: 1px solid #8d5cf6FF;
+  border: 1px solid var(--color_violet);
   max-width: fit-content;
   max-height: fit-content;
   border-radius: 80px;
+  display: flex;
+  gap: 10px;
 }
 
 .sales {
@@ -389,7 +439,7 @@ background-size: auto 100%;
 }
 
 .kafel_nagl {
-  color: #8d5cf6FF;
+  color: var(--color_violet);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -410,14 +460,40 @@ background-size: auto 100%;
   text-align: center;
   border-radius: 3px;
   margin: 30px;
+  display: block;
 }
 
- .svg_butt{
 
- }
+.padd_top {
+  padding-top: 5px;
+}
 
- .img_butt{
+.svg_butt {}
+
+.img_butt {
   justify-content: center;
   gap: 10px;
-  margin-top: 220px;
- }
+  margin-top: 180px;
+}
+
+.stars {
+  display: flex;
+  background-color: var(--color_bg);
+  width: 50px;
+  height: 20px;
+  border-radius: 15px;
+  vertical-align: middle;
+  padding: 2px 2px 0px 4px;
+}
+
+.rate {
+  padding: 1px;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.2;
+  padding-left: 4px;
+}
