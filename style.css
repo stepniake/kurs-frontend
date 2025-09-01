@@ -3,7 +3,6 @@
   --color_violet: #8d5cf6;
 }
 
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -37,23 +36,6 @@ img {
   max-width: 704px;
 }
 
-@media (max-width: 768px) {
-  .glowna {
-    flex-direction: column;
-  }
-
-  .menu_gap {
-    width: 10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .liczby {
-    flex-direction: column;
-    /* układa divy jeden pod drugim */
-  }
-
-}
 
 .menu {
   max-width: 1322px;
@@ -119,7 +101,6 @@ img {
 
   transform: scale(1.1);
 }
-
 
 .menu_button_2 {
   margin: 10px;
@@ -496,4 +477,23 @@ a:hover {
   line-height: 1.33;
   letter-spacing: 0.2;
   padding-left: 4px;
+}
+
+
+@media (max-width: 768px) {
+  .glowna {
+    flex-direction: column;
+  }
+
+  .menu_gap {
+    width: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .liczby {
+    flex-direction: column;
+    /* układa divy jeden pod drugim */
+  }
+
 }
